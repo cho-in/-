@@ -78,6 +78,6 @@ public class Main {
             number1 = 1000;
         }
         System.out.println("number1 ="+ number1);
-        //System.out.println("number2 ="+ number2);
+        //System.out.println("number2 ="+  number2); error
     }
 }
