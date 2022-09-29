@@ -121,9 +121,86 @@ public class Main {
              *
              *
              * // ** 비트 연산자
-             * // ** 삼항 연산자
-             * // ** 문자열 연산자
+             * // [&], [|], [~], [^],[<<],[>>],[>>>]
+             *
+             * // [&] = 그리고
+             * // (And 연산자)
+             *
+             * // [|] = 또는
+             * // (OR 연산자)
+             *
+             * // [~] = 반전 연산자
+             * // (NOT 연산자)
+             * {
              */
+                {
+                int number = 10;
+                System.out.println(~number + 1);
+                }
+
+             // [^] = 비트가 서로 다른 상태 일때 .... true 이다. (And 랑 정반대)
+             // (XOR 연산자)
+             {
+                 int number1 = 1;  //00000001
+                 int number2 = 3;  //00000011
+
+                // int temp = number1;
+                // number1 = number2;  // swap
+                // number2 = temp;
+
+                 // ** 변수를 새롭게 생성하지 않고 값을 스왑한다.
+                 number1 = number1 ^ number2;
+                 number2 = number1 ^ number2;
+                 number1 = number1 ^ number2;  // 3
+
+                 System.out.println("number1 : " + number1);
+                 System.out.println("number2 : " + number2);
+                 System.out.println(number1 ^ number2);
+               // [<<], [>>], [>>>] 비트 연산
+                 {
+                     // 예1
+                     // 2 - 1 = 1
+                     // 2+ (-1) = 1
+
+                     // 예2
+                     // 5 - 10 = (-5)
+                     // 5 + (-10) = (-5)
+
+                     // image size
+                     // 만약 어떤 값에 절반에 해당하는 값으로 초기화를 해야 하는 경우.
+                     // int x = 10/2;
+
+                     // 나누기 연산자를 사용하는 것보다 곱하기 연산자를 사용하는 것이 효율적이다.
+                     // int x = 10 * 0.5f;
+
+                     // 곱하기 연산자를 사용하는 것보다 쉬프트 연산자를 사용하는 것이 효율적이다.
+                     int x = 10>>2;
+                     // ** [<<] = *2 와 같음.
+                     // ** [>>] + /2 와 같음.
+
+                     // [>>>] = 부호 변경 용도.
+                 }
+
+                 // ** 삼항 연산자
+                 {
+                     // 조건식 ? true : false
+
+                    int x = 1000;
+
+                    x = 100 < x ? 100 : x;
+                     System.out.println("x : " + x);
+                 }
+
+
+             }
+
+
+
+
+
+
+
+
             System.out.println("문자열"+"출력");
 
         }
