@@ -5,7 +5,7 @@ public class Main {
         // ======================================
 
         // ** 조건문(분기문)
-        // [if], [else], [if else], [switch/case]
+        // [if], [else], [if else]
 
         {
             int number = 10;
@@ -15,10 +15,10 @@ public class Main {
             // 또는 0보다 작다면?
             if(number > 100 || 0 > number)
             {
-                System.out.println(number + "의 값이 잘못되었습니다.");
+              //  System.out.println(number + "의 값이 잘못되었습니다.");
             }
             else {
-                System.out.println("정상 입력 되었습니다.");
+              //  System.out.println("정상 입력 되었습니다.");
 
             }
 
@@ -33,7 +33,7 @@ public class Main {
             // ** 조건과 성립하지 않은 경우에는 pass
             if(number == 10)
             {
-                System.out.println("당첨");
+               // System.out.println("당첨");
             }
 
             // ** 정리 if/else 문은 if 문만 별도로 사용 가능하고,
@@ -77,6 +77,50 @@ public class Main {
             {
 
             }
+            // ** [switch/case]
+
+                int num = 0;
+
+                // ** switch = 정수 & 상수만 사용이 가능하다.
+                // ** 변수이지만 final 키워드를 사용하여 상수로 만든 경우에는 사용 가능.
+
+                switch(num)
+                {
+                    case 0:
+                        System.out.println("case 1번입니다.");
+                         break;// 탈출문
+                    case 1:
+                        System.out.println("case 2번입니다.");
+                        break;
+                    case 2:
+                        System.out.println("case 3번입니다.");
+                        break;
+                    case 3:
+                        System.out.println("case 4번입니다.");
+                        break;
+
+                }
+
+                switch (num)
+                {
+                    case 0:
+                        switch (num)
+                        {
+                            case 0:
+                                System.out.println("case 1번입니다.");
+                            case 1:
+                                System.out.println("case 2번입니다.");
+
+
+
+                        default:  // else 랑 같다.
+                            System.out.println("0과 1만 사용이 가능합니다." + num + "3은 사용이 불가합니다.");
+                        }
+                }
+
+
+
+
 
         }
 
