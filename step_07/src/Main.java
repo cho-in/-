@@ -119,6 +119,21 @@ public class Main {
                 System.out.println("for : 홍길동");
             }
 
+            // ========================
+            for(i=1;i<10;i++)
+            {
+                int j;
+                for(j=1;j<10;j++)
+                {
+                    if (j%2==0)
+                        continue;
+                    System.out.println(i +"*"+ j +"="+i*j);
+                }
+                System.out.println("\n");
+            }
+
+
+
         }
 
     }
