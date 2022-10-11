@@ -52,9 +52,5 @@ public class MemberMain {
             System.out.println(str);
         }
 
-
-
-
-
     }
 }
