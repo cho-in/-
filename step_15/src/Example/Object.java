@@ -14,7 +14,7 @@ class Object implements ParentB {
 
         abstract public void render();
         */
-        
+
         @Override
         public void parent()
         {
