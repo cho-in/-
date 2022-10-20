@@ -3,9 +3,25 @@ package Management;
 public class ManagementMain {
 
     public static void main(String[] args) {
-        //
+        Page1 page = new Page1();
+        page.SetData();
+
+        Member member =Singleton.getInstace().getMember();
+
+        if(member != null)
+        {
+           // 멤버의 필드값을 받아온다.
+            String name = member.getUserName();
+            int age = member.getAge();
+
+            String _class = member.getGroup().get_class();
+            String subject = member.getGroup().getSubject();
+
+            System.out.println(name + " : " + age + " [ " + _class + " ] :" + subject);
+        }
+        // 인스턴스 생성은 하나만 가능하다.
         // ** 맴버 객체를 생성한다. 객체화 된것을 인스턴스(추상적)라고 한다(객체가 아님.). 객체는 실물화 된것.
-        Member member = new Member();
+        /*Member member = new Member();
 
         // ** 생성한 멤버 개체에 필드값을 셋팅한다.
         member.setAge(32);
@@ -30,7 +46,7 @@ public class ManagementMain {
 
         // ** 출력한다.
         System.out.println(name + " : " + age + " [ " + _class+ " ] :" + subject);
-
+        */
     }
 
 }
