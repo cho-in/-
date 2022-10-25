@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+// 톰캣(웹어플리케이션)은 웹서버안에 들어가있음.
+dependencies {
+	// ** HTML 사용하기 위한 모듈을 추가한다.
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// 웹 어플리케이션 서버. (서버안에 톰캣이 들어있음.) // web server
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// ** Getter, Setter 를 만들어준다.
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
