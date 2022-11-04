@@ -6,20 +6,26 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter @Setter  //
+@Getter   //
 @NoArgsConstructor // 기본 생성자를 만들어준다.
 @Entity  // 테이블을 create 한다.
 @Table(name = "Member") // 테이블의 이름을 Member 로 한다.
 public class Member {
 
-    @Id
-    @GeneratedValue   // 자동으로 키를 넣는 코드.
+
+    @Id @GeneratedValue   // 자동으로 키를 넣는 코드.
     private Long id;
 
     @Column(name = "NAME")
-    private String userName;
+    private String username;
+    public Member(String username)
+    {
+        this.username = username;
+    }
 
-    @Column(name = "NAME")
+
+    /*
+    @Column(name = "AGE")
     private Integer age;
     @Column(name = "EMAIL")
     private String email;
@@ -38,3 +44,11 @@ public class Member {
     }
     */
 }
+
+// ** [영속성]
+
+// ** 영속 : EntityManager 에 포함된 상태
+// ** 비 영속 : EntityManager 에 포함되기 전 상태
+// ** 준 영속 :  EntityManager 에 포함되었었고 , 현재는 포함되지 않은 상태
+// ** 삭제 : 삭제된 상태.
+
