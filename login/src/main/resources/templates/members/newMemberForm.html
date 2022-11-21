@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:ht="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <p></p> <h4>회원 가입</h4><p>
+   <p><h4>회원정보 입력</h4><p>
+    <form action="/members//new" th:object="$(form)">
+       <p><label for= "loginId">로그인 ID</label>
+       <input type="text" id ="loginId" th:field="*(loginId)"/></p>
+
+       <p><label for= "username">이름</label>
+       <input type="text" id ="username" th:field="*(username)"/></p>
+
+       <p><label for= "password">비밀번호</label>
+       <input type="password" id ="password" th:field="*(password)"/></p>
+   </form>
+</body>
+</html>
