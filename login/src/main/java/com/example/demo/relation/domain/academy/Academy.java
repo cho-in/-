@@ -1,4 +1,4 @@
-package com.example.demo.relation.academy;
+package com.example.demo.relation.domain.academy;
 
 
 import lombok.Getter;

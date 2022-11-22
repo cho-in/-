@@ -1,6 +1,8 @@
 package com.example.demo.relation.service;
 
 
+import com.example.demo.relation.domain.member.Member;
+import com.example.demo.relation.domain.repository.OrderRepository;
 import com.example.demo.relation.member.Member;
 import com.example.demo.relation.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;

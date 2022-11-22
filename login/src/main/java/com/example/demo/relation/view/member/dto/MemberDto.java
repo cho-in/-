@@ -1,10 +1,6 @@
 package com.example.demo.relation.view.member.dto;
 
-import com.example.demo.relation.academy.Academy;
 import lombok.Data;
-
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -24,5 +20,9 @@ public class MemberDto {
 
     @NotEmpty
     private String memberName;
+
+
+    @NotEmpty
+    private String academyName;
 
 }
