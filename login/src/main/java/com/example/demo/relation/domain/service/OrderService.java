@@ -1,12 +1,9 @@
-package com.example.demo.relation.service;
+package com.example.demo.relation.domain.service;
 
 
 import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.domain.repository.OrderRepository;
-import com.example.demo.relation.member.Member;
-import com.example.demo.relation.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 @Service
 public class OrderService {
-
-    @Autowired
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
 
     @Transactional
     public void insert(Member member)

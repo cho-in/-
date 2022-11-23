@@ -1,8 +1,7 @@
 package com.example.demo.relation.domain.repository;
 
-import com.example.demo.relation.member.Member;
+import com.example.demo.relation.domain.member.Member;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 

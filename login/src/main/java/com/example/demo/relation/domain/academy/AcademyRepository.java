@@ -1,10 +1,8 @@
 package com.example.demo.relation.domain.academy;
 
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
@@ -17,7 +15,8 @@ public class AcademyRepository {
         return em.find(Academy.class, id);
     }
 
-    public List<Academy> findAll() {
+    public List<Academy> findAll()
+    {
         return em.createQuery("select a from Academy a").getResultList();
     }
    /* public List<Academy> findByName(String academyName) {

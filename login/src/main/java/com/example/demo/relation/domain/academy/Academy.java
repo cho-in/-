@@ -19,7 +19,13 @@ public class Academy {
     @Column(name = "academy_name")
     private String academyName;
 
-    /*@OneToMany(mappedBy = "academy")   //
+    @Column(name = "login_id")
+    private String loginId;
+
+    @Column(name = "password")
+    private String password;
+
+    /* @OneToMany(mappedBy = "academy")   //
     private List<Member> members = new ArrayList<>();
 
 

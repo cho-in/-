@@ -1,7 +1,7 @@
 package com.example.demo.relation.view.member.dto;
 
-import lombok.Data;
 
+import lombok.Data;
 import javax.validation.constraints.NotEmpty;
 
 

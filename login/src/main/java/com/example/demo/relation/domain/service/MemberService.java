@@ -2,19 +2,39 @@ package com.example.demo.relation.domain.service;
 
 
 import com.example.demo.relation.domain.member.Member;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.relation.domain.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
 @Service
 public class MemberService {
 
-    @Autowired
-    private MemberService memberService;
+    private final MemberRepository memberRepository;
 
     @Transactional
     public void insert(Member member)
     {
-        .insert(member);
+        memberRepository.save(member);
     }
+
+    public List<Member> findByName(String academyName)
+    {
+        return memberRepository.findByName(academyName);
+    }
+
+    public List<Member> findByLoginId(String loginId)
+    {
+        return memberRepository.findByLoginId(loginId);
+    }
+
+    public List<Member> findByPassword(String password)
+    {
+        return memberRepository.findByPassword(password);
+    }
+
 }

@@ -1,11 +1,10 @@
-package com.example.demo.relation.view.member;
-
+package com.example.demo.relation.view;
 
 import com.example.demo.relation.domain.academy.Academy;
 import com.example.demo.relation.domain.academy.AcademyRepository;
 import com.example.demo.relation.domain.member.Member;
 import com.example.demo.relation.domain.service.MemberService;
-import com.example.demo.relation.service.OrderService;
+import com.example.demo.relation.domain.service.OrderService;
 import com.example.demo.relation.view.member.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -23,7 +22,6 @@ public class RelationController {
 
 
     private final OrderService orderService;
-
 
     private final MemberService memberService;
 
