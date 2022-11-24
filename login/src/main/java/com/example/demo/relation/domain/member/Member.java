@@ -34,8 +34,8 @@ public class Member {
     // public Member() {} // 기본 생성자가 있어야 복사생성자를 사용가능.(@NoArgsConstructor)
                                                         // 복사 생성자를 통해서 한번에 값을 바꾼다.
 
-    public Member(Long id, String loginId, String memberName, String password, Academy academy) {
-        this.id = id;
+    public Member(String loginId, String memberName, String password, Academy academy) {
+
         this.loginId = loginId;
         this.memberName = memberName;
         this.password = password;

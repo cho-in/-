@@ -16,11 +16,6 @@ public class MemberRepository {
         em.persist(member);
     }
 
-    public List<Member> findByName(String academyName) {
-        return em.createQuery("select m from Member m join m.academy a where a.academyName =:name", Member.class)
-                .setParameter("name",academyName)
-                .getResultList();
-    }
 
     public List<Member> findByLoginId(String loginId) {
         return em.createQuery("select m from Member m join m.academy a where a.academyName =:name", Member.class)

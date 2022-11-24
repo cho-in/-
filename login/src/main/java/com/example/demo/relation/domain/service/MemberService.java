@@ -10,13 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+@Transactional(readOnly = true) // getter 와같다. @Transactional 사용은 필수다.
 @Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    @Transactional
+    @Transactional // 변경사항에 대한 저장 및 롤백
     public void insert(Member member)
     {
         memberRepository.save(member);
