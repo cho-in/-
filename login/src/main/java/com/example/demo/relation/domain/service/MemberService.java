@@ -22,19 +22,11 @@ public class MemberService {
         memberRepository.save(member);
     }
 
-    public List<Member> findByName(String academyName)
-    {
-        return memberRepository.findByName(academyName);
-    }
-
     public List<Member> findByLoginId(String loginId)
     {
         return memberRepository.findByLoginId(loginId);
     }
 
-    public List<Member> findByPassword(String password)
-    {
-        return memberRepository.findByPassword(password);
-    }
+
 
 }

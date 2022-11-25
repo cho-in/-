@@ -18,14 +18,9 @@ public class MemberRepository {
 
 
     public List<Member> findByLoginId(String loginId) {
-        return em.createQuery("select m from Member m join m.academy a where a.academyName =:name", Member.class)
-                .setParameter("login_id",loginId)
+        return em.createQuery("select m from Member m where m.loginId = :loginId", Member.class)
+                .setParameter("loginId", loginId)
                 .getResultList();
     }
 
-    public List<Member> findByPassword(String password) {
-        return em.createQuery("select m from Member m join m.academy a where a.academyName =:name", Member.class)
-                .setParameter("password",password)
-                .getResultList();
-    }
 }

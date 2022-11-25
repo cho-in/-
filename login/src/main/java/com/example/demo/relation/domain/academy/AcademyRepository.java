@@ -21,7 +21,8 @@ public class AcademyRepository {
         return em.createQuery("select a from Academy a").getResultList();
     }
 
-    public List<Academy> findByName(String academyName) {   // 필수 쿼리문.
+
+    public List<Member> findByName(String academyName) {   // 필수 쿼리문.
         return em.createQuery("select m from Member m join m.academy a where a.academyName =:name", Member.class)
                 .setParameter("name",academyName)
                 .getResultList();

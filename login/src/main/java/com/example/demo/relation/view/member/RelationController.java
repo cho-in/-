@@ -7,9 +7,11 @@ import com.example.demo.relation.domain.service.MemberService;
 import com.example.demo.relation.view.member.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.management.relation.RelationService;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -19,7 +21,7 @@ import java.util.List;
 @Controller
 public class RelationController {
 
-    private final MemberService memberService;
+    private final RelationService relationService;
 
     private final AcademyRepository academyRepository;
 
@@ -32,41 +34,40 @@ public class RelationController {
     }
 
     @PostMapping("/new")
-    public String save(@Valid @ModelAttribute("form") MemberDto dto) // dto 가 멤버를 만들어준다. 필드값이 다수일 경우 하나로 초기화하는 복사생성자여야 한다.
+    public String save(@Valid @ModelAttribute("form") MemberDto dto,BindingResult bindingResult) // dto 가 멤버를 만들어준다. 필드값이 다수일 경우 하나로 초기화하는 복사생성자여야 한다.
     {                                                           // dto 를 "form" 이라고 부른다는 것이다.
+        if(bindingResult.hasErrors())
+            return "member/newMemberform";
 
-        Academy academy = new Academy(dto.getAcademyName());
+        List<Member> academies =academyRepository.findByName(dto.getAcademyName());
 
-        /*List<Academy> all = academyRepository.findAll();
-        System.out.println(all.size());*/
+        Academy academy = null;
 
+        if(!academise.isEmpty())
+            academy = academise.get(0);
+        else
+            academy= new Academy(dto.getAcademyName());
 
-        List<Member> academys =memberService.findByName(dto.getAcademyName());
+        List<Member> members =relationService.findByLoginId(dto.getAcademyName());
 
-        Academy academy1 = null;
         /*// boolean check = true;       ======   List<Member> members =memberService.findByName(dto.getAcademyName());
 
         // List<Academy> all 아무것도 없음.*/
-        for (!element.isEmpty())
-        {
-           memberService.insert(
-                   new Member(
-                   dto.getLoginId(),
-               dto.getMemberName(),
-                   dto.getPassword(),
-                       acdemies.get
-               )
-           );
 
+        if (!members.isEmpty())
+        {
+            System.out.println("Error Message !!!");
+            return "members/newMemberForm";
+        }
+        else
+            relationService.insert(
+                    new Member(
+                            dto.getLoginId(),
+                            dto.getMemberName(),
+                            dto.getPassword(),
+                            academy) );
         }
 
-        if(check)
-        {
-            Academy academy = new Academy(dto.getAcademyName());
-            memberService.insert(
-                    new Member(dto.getMemberName(),academy));
-        }
-        return "redirect:/";
     }
 
 }
