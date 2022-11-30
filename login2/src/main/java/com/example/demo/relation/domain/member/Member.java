@@ -24,18 +24,14 @@ public class Member {
     @Column(name = "password")
     private String password;
 
-
-
-    @JoinColumn(name ="academy name")
+    @JoinColumn(name = "academy_id")
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Academy academy;
-
 
     // public Member() {} // 기본 생성자가 있어야 복사생성자를 사용가능.(@NoArgsConstructor)
                                                         // 복사 생성자를 통해서 한번에 값을 바꾼다.
 
     public Member(String loginId, String memberName, String password, Academy academy) {
-
         this.loginId = loginId;
         this.memberName = memberName;
         this.password = password;

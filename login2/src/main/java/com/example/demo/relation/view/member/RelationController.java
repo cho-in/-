@@ -36,9 +36,9 @@ public class RelationController {
     public String save(@Valid @ModelAttribute("form") MemberDto dto,BindingResult bindingResult) // dto 가 멤버를 만들어준다. 필드값이 다수일 경우 하나로 초기화하는 복사생성자여야 한다.
     {                                                           // dto 를 "form" 이라고 부른다는 것이다.
         if(bindingResult.hasErrors())
-            return "member/newMemberform";
+            return "members/newMemberForm";
 
-        List<Academy> academies =academyRepository.findByName(dto.getAcademyName());
+        List<Academy> academies = academyRepository.findByName(dto.getAcademyName());
 
         Academy academy = null;
 
@@ -47,7 +47,7 @@ public class RelationController {
         else
             academy= new Academy(dto.getAcademyName());
 
-        List<Member> members = relationService.findByLoginId(dto.getLoginId());
+        List<Member> members = relationService.findById(dto.getLoginId());
 
         /*// boolean check = true;       ======   List<Member> members =memberService.findByName(dto.getAcademyName());
 
@@ -65,7 +65,6 @@ public class RelationController {
                             dto.getMemberName(),
                             dto.getPassword(),
                             academy) );
-
 
        return "redirect:/";
     }
