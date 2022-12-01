@@ -32,18 +32,25 @@ public class LoginController {
         if(bindingResult.hasErrors())
             return "login/loginForm";
 
-        List<Member> member = loginService.login(dto.getLoginId(), dto.getPassword());
+        List<Member> members = loginService.login(
+                dto.getLoginId(), dto.getPassword());
 
-        if(member.size() == 0)
-            return "login/loginForm";
-
-        for(Member member : members)
+        if(members.size() == 0)
         {
-            if(member == null)
-                return "login/loginForm";
-            else
-                return "login/loginForm";
+            bindingResult.reject("loginFail","해당 ID는 존재하지 않습니다.");
+            return "login/loginForm";
         }
+
+        for (Member member : members)
+        {
+            if(member.getPassword().equals(dto.getPassword()))
+                return "login/join";
+            else
+            {
+                bindingResult.reject()
+                return "login/join";
+            }
+
         return "redirect:/";
 
     }

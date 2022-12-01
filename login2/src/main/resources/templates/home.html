@@ -5,9 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    <div>
-    <button type="button" th onclick="|location.href='@{/members/new}'|" >회원 가입</button>
-    <button type="button" th onclick="|location.href='@{/members/new}'|" >로그인</button>
-    </div>
+<div>
+    <!--회원 가입-->
+    <button type="button" th:onclick="|location.href='@{/members/new}'|">회원 가입</button>
+
+    <!--로그인-->
+    <button type="button" th:onclick="|location.href='@{/login}'|">로그인</button>
+</div>
 </body>
 </html>
